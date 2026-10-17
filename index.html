@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Heaven Hotels – Analyse des revenus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --vert: #1f5c4f;
+      --vert-fonce: #143d35;
+      --or: #c79a3c;
+      --fond: #f5f1ea;
+      --texte: #22302c;
+      --gris: #6b7671;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Inter", system-ui, sans-serif; background: var(--fond); color: var(--texte); }
+
+    header {
+      background: var(--vert-fonce); color: #fff;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 32px; position: sticky; top: 0; z-index: 10;
+    }
+    .logo { font-family: "Playfair Display", serif; font-size: 22px; letter-spacing: .5px; }
+    .logo span { color: var(--or); }
+    nav a {
+      color: #e8efe9; text-decoration: none; margin-left: 24px; font-size: 14px; font-weight: 500;
+      padding-bottom: 4px; border-bottom: 2px solid transparent;
+    }
+    nav a:hover { border-color: var(--or); }
+
+    .hero {
+      background: linear-gradient(120deg, var(--vert-fonce), var(--vert));
+      color: #fff; padding: 56px 32px 72px;
+    }
+    .hero h1 { font-family: "Playfair Display", serif; font-size: 40px; max-width: 760px; line-height: 1.2; }
+    .hero p { margin-top: 14px; max-width: 640px; color: #d7e4de; line-height: 1.6; }
+    .badges { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .badge {
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
+      padding: 6px 14px; border-radius: 999px; font-size: 13px;
+    }
+
+    main { max-width: 1280px; margin: -40px auto 0; padding: 0 24px 48px; }
+    .carte {
+      background: #fff; border-radius: 14px; box-shadow: 0 10px 30px rgba(20,61,53,.12);
+      padding: 20px; margin-bottom: 28px;
+    }
+    .carte h2 { font-size: 18px; margin-bottom: 4px; }
+    .carte .sous { color: var(--gris); font-size: 14px; margin-bottom: 16px; }
+
+    .rapport { position: relative; width: 100%; padding-top: 59%; border-radius: 10px; overflow: hidden; background: #eef1ef; }
+    .rapport iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    .grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .bloc { background: #fff; border-radius: 14px; padding: 22px; border-top: 4px solid var(--or); box-shadow: 0 4px 14px rgba(0,0,0,.05); }
+    .bloc h3 { font-size: 16px; margin-bottom: 8px; color: var(--vert-fonce); }
+    .bloc p { font-size: 14px; color: var(--gris); line-height: 1.55; }
+
+    .bouton {
+      display: inline-block; margin-top: 18px; background: var(--or); color: #fff; text-decoration: none;
+      padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px;
+    }
+
+    footer { text-align: center; color: var(--gris); font-size: 13px; padding: 24px; }
+
+    @media (max-width: 720px) {
+      header { flex-direction: column; gap: 8px; padding: 12px 16px; }
+      nav a { margin: 0 8px; }
+      .hero { padding: 36px 16px 64px; }
+      .hero h1 { font-size: 28px; }
+      main { padding: 0 16px 32px; }
+      .rapport { padding-top: 160%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Open <span>Heaven</span> Hotels</div>
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#equipe">Équipe</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Pilotage des revenus et des réservations</h1>
+    <p>Tableau de bord interactif construit avec Power BI sur un modèle en flocon :
+       revenus, annulations, clients, canaux et prédiction des annulations par Machine Learning.</p>
+    <div class="badges">
+      <span class="badge">Modèle en flocon</span>
+      <span class="badge">Actualisation automatique</span>
+      <span class="badge">Machine Learning</span>
+      <span class="badge">Sécurité RLS</span>
+    </div>
+  </section>
+
+  <main>
+    <section class="carte" id="dashboard">
+      <h2>Tableau de bord interactif</h2>
+      <p class="sous">Utilisez les segments pour filtrer par année, chambre, canal et continent.</p>
+      <div class="rapport">
+        <!-- ⬇️ REMPLACE l'URL ci-dessous par celle de ton code d'incorporation Power BI -->
+        <iframe title="Open Heaven Hotels – Dashboard"
+                src="https://app.powerbi.com/reportEmbed?reportId=f4ebf5c0-a9c0-4c45-8d67-cb784cee9e1b&autoAuth=true&ctid=604f1a96-cbe8-43f8-abbf-f8eaf5d85730"
+                allowfullscreen="true"></iframe>
+      </div>
+<a class="bouton" href="https://app.powerbi.com/groups/me/apps/94c3f234-ff80-489b-bade-bc67990a30cc" target="_blank">
+        Ouvrir l'application Power BI
+      </a>
+    </section>
+
+    <section id="fonctionnalites">
+      <div class="grille">
+        <div class="bloc">
+          <h3>Modèle en flocon</h3>
+          <p>Une table de faits Réservations et des dimensions normalisées :
+             Client → Pays → Continent, Chambre → Gamme, Canal → Type canal, Motif → Catégorie.</p>
+        </div>
+        <div class="bloc">
+          <h3>Déploiement cloud</h3>
+          <p>Données hébergées sur OneDrive, publiées sur Power BI Service avec
+             une actualisation planifiée chaque jour, sans passerelle.</p>
+        </div>
+        <div class="bloc">
+          <h3>Machine Learning</h3>
+          <p>Prédiction de la probabilité d'annulation de chaque réservation
+             et analyse des facteurs d'influence.</p>
+        </div>
+        <div class="bloc">
+          <h3>Sécurité RLS</h3>
+          <p>Chaque directeur régional ne voit que les données de son continent,
+             grâce à une sécurité dynamique basée sur l'email de connexion.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="carte" id="equipe" style="margin-top:28px">
+      <h2>Équipe projet</h2>
+      <p class="sous">ESPRIT – Mini-projet Power BI, thématique Hôtellerie</p>
+      <p>Badis Ghaoui · wajdi mejbri · baha dine jouila · hamza jamil saied · hazem omri ·  iyed essid </p>
+    </section>
+  </main>
+
+  <footer>© 2026 Open Heaven Hotels – Projet académique ESPRIT</footer>
+
+</body>
+</html>
